@@ -1,0 +1,9 @@
+{
+  "name": "9-maktab-oquvchilar-kengashi",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "build": "mkdir -p dist && cp -R public/. dist/ && cp -R admin dist/admin",
+    "dev": "python3 -m http.server 8000 -d public"
+  }
+}

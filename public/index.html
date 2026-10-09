@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="uz">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Oʻquvchilar Kengashi</title>
+    <meta
+      name="description"
+      content="Maktab Oʻquvchilar Kengashi rasmiy sayti. Kengashning maqsadi, tarkibi, faoliyati va tadbirlari."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container nav-wrap">
+        <div class="brand">
+          <div class="brand-mark">OK</div>
+          <div>
+            <span class="brand-name">Oʻquvchilar Kengashi</span>
+            <small>9-maktab</small>
+          </div>
+        </div>
+
+        <nav class="main-nav">
+          <a href="#about">Biz haqimizda</a>
+          <a href="#structure">Tarkib</a>
+          <a href="#activities">Faoliyat</a>
+          <a href="#news">Yangiliklar</a>
+          <a href="#contact">Bogʻlanish</a>
+        </nav>
+
+        <a href="/admin/index.html" class="nav-button">Admin</a>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="container hero-wrap">
+          <div class="hero-copy">
+            <span class="eyebrow">Maktabda oʻzini oʻzi boshqarish</span>
+            <h1>Oʻquvchilar Kengashi – tanlov, mas’uliyat va yetakchilikka asoslangan jamoa.</h1>
+            <p>
+              Kengash jamoadagi fikr, tashabbus va foydali loyihalarni birlashtirib,
+              oʻquvchilar manfaatlarini himoya qilish, taʼlim jarayoniga faol ishtirok
+              etish va ijtimoiy faoliyatni rivojlantirishga qaratilgan.
+            </p>
+            <div class="hero-actions">
+              <a href="#structure" class="primary-btn">Tarkibni ko'rish</a>
+              <a href="#news" class="secondary-btn">Yangiliklar</a>
+            </div>
+            <ul class="hero-metrics" id="heroStats"></ul>
+          </div>
+
+          <div class="hero-card">
+            <div class="mini-card">
+              <span class="mini-label">Kelajak lideri</span>
+              <h3 id="leaderName">Murodova Shaxnoza</h3>
+              <p id="leaderRole">Maktab Oʻquvchilar Kengashi rahbari</p>
+            </div>
+            <div class="info-grid">
+              <div>
+                <strong>8+</strong>
+                <span>koordinator</span>
+              </div>
+              <div>
+                <strong>5–11</strong>
+                <span>sinflar</span>
+              </div>
+              <div>
+                <strong>12+</strong>
+                <span>tadbir</span>
+              </div>
+              <div>
+                <strong>100%</strong>
+                <span>faol</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="about" class="section">
+        <div class="container">
+          <div class="section-head">
+            <span class="eyebrow">Biz haqimizda</span>
+            <h2>Oʻquvchilar Kengashi nima qiladi?</h2>
+          </div>
+
+          <div class="about-grid">
+            <div class="panel">
+              <h3>Maqsad</h3>
+              <p>
+                Oʻquvchilarni faol, mas’uliyatli va milliy qadriyatlarga asoslangan
+                fuqarolarga aylantirish; jamoaviy fikr, tengdoshlik va ijtimoiy
+                faollikni rivojlantirish.
+              </p>
+            </div>
+            <div class="panel">
+              <h3>Vazifalar</h3>
+              <p>
+                Loyihalarni qoʻllab-quvvatlash, tadbirlar tashkil etish, muammolarni
+                aniqlash, maktab maʼmuriyati va oila bilan muloqot oʻrnatish.
+              </p>
+            </div>
+            <div class="panel">
+              <h3>Qadriyatlar</h3>
+              <p>
+                Vatanparvarlik, birdamlik, halollik, adolat, mas’uliyat va xalqaro
+                fikrlash, jamoa manfaatlarini himoya qilish.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="structure" class="section alt-bg">
+        <div class="container">
+          <div class="section-head">
+            <span class="eyebrow">Tarkib</span>
+            <h2>Kengash tuzilmasi</h2>
+          </div>
+          <div id="leadershipGrid" class="leadership-grid"></div>
+        </div>
+      </section>
+
+      <section id="activities" class="section">
+        <div class="container">
+          <div class="section-head">
+            <span class="eyebrow">Faoliyat</span>
+            <h2>Asosiy yoʻnalishlar</h2>
+          </div>
+          <div id="activityGrid" class="activity-grid"></div>
+        </div>
+      </section>
+
+      <section id="news" class="section alt-bg">
+        <div class="container">
+          <div class="section-head inline-head">
+            <div>
+              <span class="eyebrow">Yangiliklar</span>
+              <h2>So‘nggi tadbirlar</h2>
+            </div>
+            <a href="#contact" class="text-link">Barchasini ko'rish</a>
+          </div>
+          <div id="newsList" class="news-list"></div>
+        </div>
+      </section>
+
+      <section id="contact" class="section contact-section">
+        <div class="container contact-box">
+          <div>
+            <span class="eyebrow">Bogʻlanish</span>
+            <h2>Biz bilan aloqada boʻling</h2>
+            <p>
+              Taklif, soʻrov va tashabbuslaringizni maktab maslahatchisi yoki
+              Kengash koordinatorlariga yuborishingiz mumkin.
+            </p>
+          </div>
+
+          <div class="contact-card">
+            <p><strong>Maktab:</strong> 9-maktab</p>
+            <p><strong>Telefon:</strong> +998 90 123 45 67</p>
+            <p><strong>Email:</strong> kengash@school.uz</p>
+            <p><strong>Manzil:</strong> Toshkent shahri</p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-wrap">
+        <p>© <span id="year">2026</span> Oʻquvchilar Kengashi</p>
+        <a href="/admin/index.html">Admin panel</a>
+      </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+  </body>
+</html>
+

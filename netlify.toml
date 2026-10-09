@@ -1,0 +1,8 @@
+[build]
+  command = "mkdir -p dist && cp -R public/. dist/ && cp -R admin dist/admin"
+  publish = "dist"
+
+[[redirects]]
+  from = "/admin"
+  to = "/admin/index.html"
+  status = 200

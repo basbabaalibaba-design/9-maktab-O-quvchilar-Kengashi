@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="uz">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard | Oʻquvchilar Kengashi</title>
+    <link rel="stylesheet" href="css/admin.css" />
+  </head>
+  <body class="dashboard-body">
+    <aside class="sidebar">
+      <div class="brand-box">
+        <div class="brand">OK</div>
+        <span>Admin</span>
+      </div>
+
+      <nav>
+        <a href="#general">Umumiy ma’lumot</a>
+        <a href="#leaders">Rahbariyat</a>
+        <a href="#news">Yangiliklar</a>
+        <a href="#logout" id="logoutBtn">Chiqish</a>
+      </nav>
+    </aside>
+
+    <main class="dashboard-main">
+      <section id="general" class="panel">
+        <h2>Umumiy ma’lumot</h2>
+        <form id="generalForm">
+          <div class="form-grid">
+            <label>
+              Maktab nomi
+              <input type="text" id="schoolName" />
+            </label>
+            <label>
+              Telefon
+              <input type="text" id="phone" />
+            </label>
+            <label>
+              Email
+              <input type="email" id="email" />
+            </label>
+            <label>
+              Manzil
+              <input type="text" id="address" />
+            </label>
+          </div>
+          <button type="submit">Saqlash</button>
+        </form>
+      </section>
+
+      <section id="leaders" class="panel">
+        <h2>Rahbariyat</h2>
+        <form id="leaderForm">
+          <div class="form-grid">
+            <label>
+              Kelajak lideri
+              <input type="text" id="leaderName" />
+            </label>
+            <label>
+              Lavozim
+              <input type="text" id="leaderRole" />
+            </label>
+          </div>
+          <button type="submit">Saqlash</button>
+        </form>
+      </section>
+
+      <section id="news" class="panel">
+        <h2>Yangiliklar</h2>
+        <form id="newsForm">
+          <div class="form-grid">
+            <label>
+              Sarlavha
+              <input type="text" id="newsTitle" />
+            </label>
+            <label>
+              Sana
+              <input type="text" id="newsDate" />
+            </label>
+            <label class="full-width">
+              Matn
+              <textarea id="newsText" rows="4"></textarea>
+            </label>
+          </div>
+          <button type="submit">Yangilik qo‘shish</button>
+        </form>
+      </section>
+    </main>
+
+    <script src="js/admin.js"></script>
+  </body>
+</html>
