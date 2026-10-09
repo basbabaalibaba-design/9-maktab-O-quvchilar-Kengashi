@@ -9,12 +9,36 @@ const defaultData = {
     role: 'Kelajak lideri'
   },
   leadership: [
-    { role: 'Kelajak lideri', name: 'Murodova Shaxnoza', desc: 'Jamoa faoliyatini muvofiqlashtirish va tadbirlar rejasini ishlab chiqish.' },
-    { role: 'Ta’lim koordinatori', name: 'Abdullayev Dilshod', desc: 'Ta’lim sifatini oshirish, bilim yutug’lari va sinf vakillarini qo’llab-quvvatlash.' },
-    { role: 'Madaniyat koordinatori', name: 'Nazarova Nilufar', desc: 'Milliy an’analar va madaniy tadbirlarni targʻib qilish, ijodiy loyihalarni rivojlantirish.' },
-    { role: 'Media koordinatori', name: 'Raximov Jamshid', desc: 'Yangiliklar, matbuot va ijtimoiy muloqot maydonini rivojlantirish.' },
-    { role: 'Sport koordinatori', name: 'Sattorov Temur', desc: 'Sport va sogʻlom turmush tarzini targʻib qilish, musobaqalarni tashkil etish.' },
-    { role: 'Ijtimoiy tashabbus koordinatori', name: 'Qosimova Sevinch', desc: 'Foydali loyihalar, ijtimoiy tashabbuslar va jamoatchilik faoliyati.' }
+    {
+      role: 'Kelajak lideri',
+      name: 'Murodova Shaxnoza',
+      desc: 'Jamoa faoliyatini muvofiqlashtirish va tadbirlar rejasini ishlab chiqish.'
+    },
+    {
+      role: 'Ta’lim koordinatori',
+      name: 'Abdullayev Dilshod',
+      desc: 'Ta’lim sifatini oshirish, bilim yutug’lari va sinf vakillarini qo’llab-quvvatlash.'
+    },
+    {
+      role: 'Madaniyat koordinatori',
+      name: 'Nazarova Nilufar',
+      desc: 'Milliy an’analar va madaniy tadbirlarni targʻib qilish, ijodiy loyihalarni rivojlantirish.'
+    },
+    {
+      role: 'Media koordinatori',
+      name: 'Raximov Jamshid',
+      desc: 'Yangiliklar, matbuot va ijtimoiy muloqot maydonini rivojlantirish.'
+    },
+    {
+      role: 'Sport koordinatori',
+      name: 'Sattorov Temur',
+      desc: 'Sport va sogʻlom turmush tarzini targʻib qilish, musobaqalarni tashkil etish.'
+    },
+    {
+      role: 'Ijtimoiy tashabbus koordinatori',
+      name: 'Qosimova Sevinch',
+      desc: 'Foydali loyihalar, ijtimoiy tashabbuslar va jamoatchilik faoliyati.'
+    }
   ],
   activities: [
     {
@@ -56,8 +80,12 @@ const defaultData = {
 };
 
 function getSiteData() {
-  const saved = localStorage.getItem('kengashSiteData');
-  return saved ? JSON.parse(saved) : defaultData;
+  try {
+    const saved = localStorage.getItem('kengashSiteData');
+    return saved ? JSON.parse(saved) : defaultData;
+  } catch (error) {
+    return defaultData;
+  }
 }
 
 function renderHeroStats() {
@@ -65,7 +93,7 @@ function renderHeroStats() {
   const list = document.getElementById('heroStats');
   if (!list) return;
 
-  list.innerHTML = data.stats
+  list.innerHTML = (data.stats || defaultData.stats)
     .map((item) => `<li>${item}</li>`)
     .join('');
 }

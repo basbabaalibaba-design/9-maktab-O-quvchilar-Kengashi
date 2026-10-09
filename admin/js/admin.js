@@ -139,7 +139,6 @@ function handleNewsForm(event) {
 function setupLoginPage() {
   const form = document.getElementById('loginForm');
   if (!form) return;
-
   form.addEventListener('submit', handleLogin);
 }
 
@@ -172,4 +171,3 @@ document.addEventListener('DOMContentLoaded', () => {
 
   setupLoginPage();
 });
-

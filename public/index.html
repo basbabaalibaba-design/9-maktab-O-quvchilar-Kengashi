@@ -3,10 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Oʻquvchilar Kengashi</title>
+    <title>Oʻquvchilar Kengashi | 9-Maktab</title>
     <meta
       name="description"
-      content="Maktab Oʻquvchilar Kengashi rasmiy sayti. Kengashning maqsadi, tarkibi, faoliyati va tadbirlari."
+      content="9-maktab Oʻquvchilar Kengashi rasmiy sayti. Kengash haqida ma’lumot, tarkib, tadbirlar va bog‘lanish."
     />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -19,7 +19,7 @@
   <body>
     <header class="site-header">
       <div class="container nav-wrap">
-        <div class="brand">
+        <div class="brand" aria-label="Maktab logotipi">
           <div class="brand-mark">OK</div>
           <div>
             <span class="brand-name">Oʻquvchilar Kengashi</span>
@@ -27,7 +27,7 @@
           </div>
         </div>
 
-        <nav class="main-nav">
+        <nav class="main-nav" aria-label="Asosiy navigatsiya">
           <a href="#about">Biz haqimizda</a>
           <a href="#structure">Tarkib</a>
           <a href="#activities">Faoliyat</a>
@@ -44,14 +44,14 @@
         <div class="container hero-wrap">
           <div class="hero-copy">
             <span class="eyebrow">Maktabda oʻzini oʻzi boshqarish</span>
-            <h1>Oʻquvchilar Kengashi – tanlov, mas’uliyat va yetakchilikka asoslangan jamoa.</h1>
+            <h1>Oʻquvchilar Kengashi – yetakchilik, mas’uliyat va tajriba.</h1>
             <p>
               Kengash jamoadagi fikr, tashabbus va foydali loyihalarni birlashtirib,
               oʻquvchilar manfaatlarini himoya qilish, taʼlim jarayoniga faol ishtirok
               etish va ijtimoiy faoliyatni rivojlantirishga qaratilgan.
             </p>
             <div class="hero-actions">
-              <a href="#structure" class="primary-btn">Tarkibni ko'rish</a>
+              <a href="#structure" class="primary-btn">Tarkibni ko‘rish</a>
               <a href="#news" class="secondary-btn">Yangiliklar</a>
             </div>
             <ul class="hero-metrics" id="heroStats"></ul>
@@ -93,28 +93,28 @@
           </div>
 
           <div class="about-grid">
-            <div class="panel">
+            <article class="panel">
               <h3>Maqsad</h3>
               <p>
                 Oʻquvchilarni faol, mas’uliyatli va milliy qadriyatlarga asoslangan
                 fuqarolarga aylantirish; jamoaviy fikr, tengdoshlik va ijtimoiy
                 faollikni rivojlantirish.
               </p>
-            </div>
-            <div class="panel">
+            </article>
+            <article class="panel">
               <h3>Vazifalar</h3>
               <p>
                 Loyihalarni qoʻllab-quvvatlash, tadbirlar tashkil etish, muammolarni
                 aniqlash, maktab maʼmuriyati va oila bilan muloqot oʻrnatish.
               </p>
-            </div>
-            <div class="panel">
+            </article>
+            <article class="panel">
               <h3>Qadriyatlar</h3>
               <p>
                 Vatanparvarlik, birdamlik, halollik, adolat, mas’uliyat va xalqaro
                 fikrlash, jamoa manfaatlarini himoya qilish.
               </p>
-            </div>
+            </article>
           </div>
         </div>
       </section>
@@ -139,14 +139,37 @@
         </div>
       </section>
 
-      <section id="news" class="section alt-bg">
+      <section id="gallery" class="section alt-bg">
+        <div class="container">
+          <div class="section-head">
+            <span class="eyebrow">Galereya</span>
+            <h2>Maktab hayoti</h2>
+          </div>
+          <div class="gallery-grid">
+            <div class="gallery-item tall">
+              <span>Yosh liderlar</span>
+            </div>
+            <div class="gallery-item">
+              <span>Sport kuni</span>
+            </div>
+            <div class="gallery-item">
+              <span>Ekologiya</span>
+            </div>
+            <div class="gallery-item wide">
+              <span>Bayram tadbirlari</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="news" class="section">
         <div class="container">
           <div class="section-head inline-head">
             <div>
               <span class="eyebrow">Yangiliklar</span>
               <h2>So‘nggi tadbirlar</h2>
             </div>
-            <a href="#contact" class="text-link">Barchasini ko'rish</a>
+            <a href="#contact" class="text-link">Barchasini ko‘rish</a>
           </div>
           <div id="newsList" class="news-list"></div>
         </div>
@@ -183,4 +206,3 @@
     <script src="js/main.js"></script>
   </body>
 </html>
-
