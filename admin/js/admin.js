@@ -1,7 +1,4 @@
-const adminCredentials = {
-  username: 'admin',
-  password: 'kelajak2026'
-};
+const adminCredentials = null;
 
 const defaultData = {
   leader: { name: 'Murodova Shaxnoza', role: 'Kelajak lideri' },
@@ -64,18 +61,9 @@ function fillDashboardForm() {
 function handleLogin(event) {
   event.preventDefault();
 
-  const username = document.getElementById('username')?.value.trim();
-  const password = document.getElementById('password')?.value.trim();
   const message = document.getElementById('loginMessage');
-
-  if (username === adminCredentials.username && password === adminCredentials.password) {
-    setLoggedIn(true);
-    window.location.href = 'dashboard.html';
-    return;
-  }
-
   if (message) {
-    message.textContent = 'Notoʻgʻri foydalanuvchi nomi yoki parol.';
+    message.textContent = 'Admin panel is disabled in the public deployment for security. Please contact the site owner.';
     message.style.color = '#d9534f';
   }
 }
@@ -165,7 +153,7 @@ function setupDashboardPage() {
 
 document.addEventListener('DOMContentLoaded', () => {
   if (window.location.pathname.endsWith('/dashboard.html') || window.location.pathname.includes('dashboard.html')) {
-    setupDashboardPage();
+    window.location.href = 'index.html';
     return;
   }
 

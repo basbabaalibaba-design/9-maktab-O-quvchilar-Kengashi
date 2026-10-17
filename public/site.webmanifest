@@ -1,0 +1,9 @@
+{
+  "name": "Oʻquvchilar Kengashi",
+  "short_name": "Kengash",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#f4f7fb",
+  "theme_color": "#1b5ecb",
+  "description": "9-maktab Oʻquvchilar Kengashi rasmiy sayti"
+}
