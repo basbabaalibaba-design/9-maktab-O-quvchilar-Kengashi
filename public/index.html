@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#1b5ecb" />
     <title>Oʻquvchilar Kengashi | 9-Maktab</title>
     <meta
       name="description"
@@ -19,13 +20,13 @@
   <body>
     <header class="site-header">
       <div class="container nav-wrap">
-        <div class="brand" aria-label="Maktab logotipi">
+        <a href="#top" class="brand" aria-label="Maktab logotipi">
           <div class="brand-mark">OK</div>
           <div>
             <span class="brand-name">Oʻquvchilar Kengashi</span>
             <small>9-maktab</small>
           </div>
-        </div>
+        </a>
 
         <nav class="main-nav" aria-label="Asosiy navigatsiya">
           <a href="#about">Biz haqimizda</a>
@@ -39,10 +40,10 @@
       </div>
     </header>
 
-    <main>
+    <main id="top">
       <section class="hero">
         <div class="container hero-wrap">
-          <div class="hero-copy">
+          <div class="hero-copy reveal">
             <span class="eyebrow">Maktabda oʻzini oʻzi boshqarish</span>
             <h1>Oʻquvchilar Kengashi – yetakchilik, mas’uliyat va tajriba.</h1>
             <p>
@@ -57,7 +58,7 @@
             <ul class="hero-metrics" id="heroStats"></ul>
           </div>
 
-          <div class="hero-card">
+          <div class="hero-card reveal">
             <div class="mini-card">
               <span class="mini-label">Kelajak lideri</span>
               <h3 id="leaderName">Murodova Shaxnoza</h3>
@@ -87,13 +88,13 @@
 
       <section id="about" class="section">
         <div class="container">
-          <div class="section-head">
+          <div class="section-head reveal">
             <span class="eyebrow">Biz haqimizda</span>
             <h2>Oʻquvchilar Kengashi nima qiladi?</h2>
           </div>
 
           <div class="about-grid">
-            <article class="panel">
+            <article class="panel reveal">
               <h3>Maqsad</h3>
               <p>
                 Oʻquvchilarni faol, mas’uliyatli va milliy qadriyatlarga asoslangan
@@ -101,14 +102,14 @@
                 faollikni rivojlantirish.
               </p>
             </article>
-            <article class="panel">
+            <article class="panel reveal">
               <h3>Vazifalar</h3>
               <p>
                 Loyihalarni qoʻllab-quvvatlash, tadbirlar tashkil etish, muammolarni
                 aniqlash, maktab maʼmuriyati va oila bilan muloqot oʻrnatish.
               </p>
             </article>
-            <article class="panel">
+            <article class="panel reveal">
               <h3>Qadriyatlar</h3>
               <p>
                 Vatanparvarlik, birdamlik, halollik, adolat, mas’uliyat va xalqaro
@@ -121,7 +122,7 @@
 
       <section id="structure" class="section alt-bg">
         <div class="container">
-          <div class="section-head">
+          <div class="section-head reveal">
             <span class="eyebrow">Tarkib</span>
             <h2>Kengash tuzilmasi</h2>
           </div>
@@ -131,7 +132,7 @@
 
       <section id="activities" class="section">
         <div class="container">
-          <div class="section-head">
+          <div class="section-head reveal">
             <span class="eyebrow">Faoliyat</span>
             <h2>Asosiy yoʻnalishlar</h2>
           </div>
@@ -141,30 +142,22 @@
 
       <section id="gallery" class="section alt-bg">
         <div class="container">
-          <div class="section-head">
+          <div class="section-head reveal">
             <span class="eyebrow">Galereya</span>
             <h2>Maktab hayoti</h2>
           </div>
           <div class="gallery-grid">
-            <div class="gallery-item tall">
-              <span>Yosh liderlar</span>
-            </div>
-            <div class="gallery-item">
-              <span>Sport kuni</span>
-            </div>
-            <div class="gallery-item">
-              <span>Ekologiya</span>
-            </div>
-            <div class="gallery-item wide">
-              <span>Bayram tadbirlari</span>
-            </div>
+            <div class="gallery-item tall reveal"><span>Yosh liderlar</span></div>
+            <div class="gallery-item reveal"><span>Sport kuni</span></div>
+            <div class="gallery-item reveal"><span>Ekologiya</span></div>
+            <div class="gallery-item wide reveal"><span>Bayram tadbirlari</span></div>
           </div>
         </div>
       </section>
 
       <section id="news" class="section">
         <div class="container">
-          <div class="section-head inline-head">
+          <div class="section-head inline-head reveal">
             <div>
               <span class="eyebrow">Yangiliklar</span>
               <h2>So‘nggi tadbirlar</h2>
@@ -176,7 +169,7 @@
       </section>
 
       <section id="contact" class="section contact-section">
-        <div class="container contact-box">
+        <div class="container contact-box reveal">
           <div>
             <span class="eyebrow">Bogʻlanish</span>
             <h2>Biz bilan aloqada boʻling</h2>

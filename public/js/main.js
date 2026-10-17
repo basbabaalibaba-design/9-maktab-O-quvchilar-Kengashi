@@ -115,7 +115,7 @@ function renderLeadership() {
   container.innerHTML = (data.leadership || defaultData.leadership)
     .map(
       (item) => `
-        <article class="leadership-card">
+        <article class="leadership-card reveal">
           <span class="role-tag">${item.role}</span>
           <h3>${item.name}</h3>
           <p>${item.desc}</p>
@@ -133,7 +133,7 @@ function renderActivities() {
   container.innerHTML = (data.activities || defaultData.activities)
     .map(
       (item) => `
-        <article class="activity-card">
+        <article class="activity-card reveal">
           <h3>${item.title}</h3>
           <p>${item.description}</p>
         </article>
@@ -150,7 +150,7 @@ function renderNews() {
   container.innerHTML = (data.news || defaultData.news)
     .map(
       (item) => `
-        <article class="news-card">
+        <article class="news-card reveal">
           <span class="date">${item.date}</span>
           <h3>${item.title}</h3>
           <p>${item.description}</p>
@@ -174,6 +174,22 @@ function renderContact() {
   `;
 }
 
+function setupRevealObserver() {
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.15 }
+  );
+
+  document.querySelectorAll('.reveal').forEach((element) => observer.observe(element));
+}
+
 function initSite() {
   renderHeroStats();
   renderLeader();
@@ -181,6 +197,7 @@ function initSite() {
   renderActivities();
   renderNews();
   renderContact();
+  setupRevealObserver();
 
   const yearEl = document.getElementById('year');
   if (yearEl) yearEl.textContent = new Date().getFullYear();
