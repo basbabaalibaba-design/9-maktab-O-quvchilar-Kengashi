@@ -1,39 +1,65 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="uz">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Admin Panel | Oʻquvchilar Kengashi</title>
-    <link rel="stylesheet" href="css/admin.css" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Admin — Oʻquvchilar Kengashi</title>
+    <link rel="stylesheet" href="styles.css" />
+    <!-- Firebase (compat) SDKs — admin page will use them only if you add firebase-config.js -->
+    <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-firestore-compat.js"></script>
   </head>
-  <body class="admin-body">
-    <div class="login-shell">
-      <div class="login-card">
-        <div class="login-header">
-          <div class="brand">OK</div>
-          <div>
-            <h1>Admin Panel</h1>
-            <p>Oʻquvchilar Kengashi tizimi</p>
-          </div>
+  <body>
+    <main class="admin-wrap">
+      <h1>Admin Panel</h1>
+      <section class="auth">
+        <div id="authArea">
+          <label for="email">Email</label>
+          <input id="email" type="email" />
+          <label for="password">Parol</label>
+          <input id="password" type="password" />
+          <button id="loginBtn">Kirish</button>
+          <button id="logoutBtn" hidden>Chiqish</button>
+          <p id="authMsg" class="muted"></p>
         </div>
+      </section>
 
-        <form id="loginForm">
-          <label>
-            Foydalanuvchi nomi
-            <input type="text" id="username" placeholder="admin" required />
-          </label>
+      <section id="editor" hidden>
+        <h2>Yangiliklar</h2>
+        <div id="newsEditor">
+          <input id="newsTitle" placeholder="Sarlavha" />
+          <input id="newsDate" placeholder="Sana" />
+          <textarea id="newsDesc" placeholder="Tavsif"></textarea>
+          <button id="addNews">Qo'shish</button>
+        </div>
+        <div id="newsListAdmin"></div>
 
-          <label>
-            Parol
-            <input type="password" id="password" placeholder="••••••••" required />
-          </label>
+        <h2>Rahbarlar / Tarkib</h2>
+        <div id="leadEditor">
+          <input id="leaderRole" placeholder="Lavozim" />
+          <input id="leaderName" placeholder="Ism" />
+          <input id="leaderDesc" placeholder="Tavsif" />
+          <button id="addLeader">Qo'shish</button>
+        </div>
+        <div id="leadListAdmin"></div>
 
-          <button type="submit">Kirish</button>
-          <p id="loginMessage" class="message"></p>
-        </form>
-      </div>
-    </div>
+        <h2>Saqlash</h2>
+        <button id="saveAll">Saqlash (localStorage yoki Firebase)</button>
+        <p class="muted">Agar Firebase o'rnatilgan bo'lsa, ma'lumotlar Firestore-ga yoziladi.</p>
+      </section>
 
-    <script src="js/admin.js"></script>
+      <section id="help">
+        <h3>Ko'rsatmalar</h3>
+        <ul>
+          <li>Fayl <code>public/js/firebase-config.example.js</code> nusxasini <code>public/js/firebase-config.js</code> ga aylantiring va o'z ma'lumotlaringizni joylashtiring, agar Firebase ishlatmoqchi bo'lsangiz.</li>
+          <li>Yoki oson variant: lokal o'zgaruvchini ishlatish — bu faqat demo uchun.</li>
+          <li>Deploy: Netlify yoki boshqa static hosting.</li>
+        </ul>
+      </section>
+    </main>
+
+    <script src="/js/firebase-config.js" defer onerror="console.info('no firebase-config')"></script>
+    <script src="admin.js" defer></script>
   </body>
 </html>
