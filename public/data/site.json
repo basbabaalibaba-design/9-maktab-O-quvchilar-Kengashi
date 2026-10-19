@@ -1,0 +1,80 @@
+{
+  "stats": [
+    "8 ta koordinatsiya yoʻnalishi",
+    "5–11-sinflar vakillari",
+    "Yillik faoliyat va tadbirlar"
+  ],
+  "leader": {
+    "name": "Murodova Shaxnoza",
+    "role": "Kelajak lideri"
+  },
+  "leadership": [
+    {
+      "role": "Kelajak lideri",
+      "name": "Murodova Shaxnoza",
+      "desc": "Jamoa faoliyatini muvofiqlashtirish va tadbirlar rejasini ishlab chiqish."
+    },
+    {
+      "role": "Ta’lim koordinatori",
+      "name": "Abdullayev Dilshod",
+      "desc": "Ta’lim sifatini oshirish, bilim yutug’lari va sinf vakillarini qo’llab-quvvatlash."
+    },
+    {
+      "role": "Madaniyat koordinatori",
+      "name": "Nazarova Nilufar",
+      "desc": "Milliy an’analar va madaniy tadbirlarni targʻib qilish, ijodiy loyihalarni rivojlantirish."
+    },
+    {
+      "role": "Media koordinatori",
+      "name": "Raximov Jamshid",
+      "desc": "Yangiliklar, matbuot va ijtimoiy muloqot maydonini rivojlantirish."
+    },
+    {
+      "role": "Sport koordinatori",
+      "name": "Sattorov Temur",
+      "desc": "Sport va sogʻlom turmush tarzini targʻib qilish, musobaqalarni tashkil etish."
+    },
+    {
+      "role": "Ijtimoiy tashabbus koordinatori",
+      "name": "Qosimova Sevinch",
+      "desc": "Foydali loyihalar, ijtimoiy tashabbuslar va jamoatchilik faoliyati."
+    }
+  ],
+  "activities": [
+    {
+      "title": "Loyihalar va tashabbuslar",
+      "description": "Oʻquvchilar tashabbuslarini qoʻllab-quvvatlash va jamoa manfaatlariga xizmat qiladigan loyihalarni yoʻlga qoʻyish."
+    },
+    {
+      "title": "Madaniy tadbirlar",
+      "description": "Milliy bayramlar, maʼnaviy tadbirlar, teatrlashtirish va ijodiy festivallarni tashkil etish."
+    },
+    {
+      "title": "Sport va salomatlik",
+      "description": "Sogʻlom turmush tarzini targʻib qilish, sport musobaqalari, harakat va faoliyatlar."
+    }
+  ],
+  "news": [
+    {
+      "title": "Yosh liderlar forumi",
+      "date": "25-sentabr 2026",
+      "description": "Oʻquvchilar Kengashi rahbariyati yangi mavzu doirasida yosh liderlar bilan tanishdi."
+    },
+    {
+      "title": "Ekologiya kuni",
+      "date": "10-oktabr 2026",
+      "description": "Maktab hududida ekologik tadbir, yongʻin xavfsizligi va chiqindilarni ajratish aksiyasi."
+    },
+    {
+      "title": "Kengash yigʻilishi",
+      "date": "18-oktabr 2026",
+      "description": "Yillik reja, loyiha bo’yicha fikrlar va takliflar muhokama qilindi."
+    }
+  ],
+  "contact": {
+    "school": "9-maktab",
+    "phone": "+998 90 123 45 67",
+    "email": "kengash@school.uz",
+    "address": "Toshkent shahri"
+  }
+}

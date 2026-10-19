@@ -1,0 +1,8 @@
+/* admin styles */
+body { font-family: 'Manrope', system-ui, sans-serif; margin: 20px; background: #f6f8fb; color: #122033 }
+.admin-wrap { max-width: 900px; margin: 0 auto; }
+input, textarea { width: 100%; padding: 10px; margin: 6px 0; border-radius: 8px; border: 1px solid rgba(18,32,51,0.08) }
+button { background: linear-gradient(135deg,#1b5ecb,#2977ff); color: #fff; border: none; padding: 10px 14px; border-radius: 8px; font-weight: 800; cursor: pointer }
+.muted { color: #5d6c7f }
+#newsListAdmin article, #leadListAdmin article { background: #fff; border: 1px solid rgba(18,32,51,0.06); padding: 12px; margin: 8px 0; border-radius: 10px }
+.admin-controls { display:flex; gap:10px; margin-top:8px }

@@ -1,127 +1,34 @@
-# Oʻquvchilar Kengashi - Veb Sayt
+# Admin and data integration
 
-Maktab Oʻquvchilar Kengashining rasmiy veb-saytı. **Netlify** hosting + **Admin Panel** bilan.
+This patch adds basic data and an admin UI with localStorage + optional Firebase support.
 
-## 📋 Loyohaning Tuzilmasi
+What I changed:
 
-```
-9-maktab-O-quvchilar-Kengashi/
-├── public/                    # Statik fayllar
-│   ├── index.html            # Bosh sahifa
-│   ├── css/
-│   │   ├── style.css
-│   │   └── admin.css
-│   ├── js/
-│   │   ├── main.js
-│   │   ├── admin.js
-│   │   └── db.js (Firebase/Supabase)
-│   └── images/
-├── netlify.toml              # Netlify konfiguratsiyasi
-├── functions/                # Netlify Functions (Backend)
-│   ├── auth.js
-│   └── api.js
-├── admin/                    # Admin Panel
-│   ├── index.html
-│   ├── dashboard.html
-│   └── login.html
-├── data/                     # JSON ma'lumotlar
-│   ├── members.json
-│   ├── events.json
-│   └── news.json
-└── package.json
-```
+- Added public/data/site.json — canonical site data used by the public site.
+- Updated public/js/main.js to fetch /data/site.json (with localStorage fallback), add lazy background loading and keep the reveal animation.
+- Added public/js/firebase-config.example.js — template for Firebase config. Copy to public/js/firebase-config.js and fill values (DO NOT commit your real keys).
+- Added a simple admin UI under /admin with CRUD for news and leadership. The admin page saves data to localStorage and, if you add a valid Firebase config, will save to Firestore as well.
+- Added admin styles and admin JS.
 
-## 🎯 Xususiyatlari
+How to use
 
-### 👥 Ommaviy Sayt (Public)
-- ✅ Bosh sahifa
-- ✅ Kengash tuzilmasi
-- ✅ Koordinatorlar
-- ✅ Yangiliklar va tadbirlar
-- ✅ Nizom (PDF)
-- ✅ Bog'lanish
+1. Local test
 
-### 🔐 Admin Panel (Private)
-- 🔑 Kirish (Login)
-- 📝 Koordinatorlarni boshqarish
-- 📰 Yangiliklar yaratish/o'zgartirish
-- 📅 Tadbirlarni jadvalka olish
-- 👥 A'zolarni qaydaga olish
-- 📊 Statistika/Hisobot
+   npm run dev
+   Open http://localhost:8000/
+   Admin: http://localhost:8000/admin/
 
-## 🚀 Texnologiyalar
+2. Firebase (optional)
 
-| Qator | Teknologiya |
-|-------|------------|
-| **Frontend** | HTML5, CSS3, JavaScript |
-| **Database** | Firebase Realtime / Supabase |
-| **Hosting** | Netlify |
-| **Backend** | Netlify Functions |
-| **Auth** | Firebase Authentication |
+   - Copy `public/js/firebase-config.example.js` to `public/js/firebase-config.js` and enter your Firebase project values.
+   - Enable Email/Password auth in Firebase console and add a test user (or use the demo admin password `admin` for local mode).
+   - If you want Firestore writes, create a Firestore DB in the console.
 
-## 📦 O'rnatish
+3. Deploy
 
-```bash
-# GitHub-dan clone qiling
-git clone https://github.com/basbabaalibaba-design/9-maktab-O-quvchilar-Kengashi.git
-cd 9-maktab-O-quvchilar-Kengashi
+   The site is static — deploy to Netlify, Vercel, GitHub Pages, etc.
 
-# Bog'lanishlarni o'rnating
-npm install
+Notes
 
-# Local test
-npm run dev
-
-# Netlify-ga deploy qiling
-netlify deploy
-```
-
-## 🔧 Netlify Konfiguratsiyasi
-
-`netlify.toml` faylida:
-```toml
-[build]
-  command = "npm run build"
-  publish = "public"
-
-[[redirects]]
-  from = "/api/*"
-  to = "/.netlify/functions/api/:splat"
-  status = 200
-```
-
-## 🔐 Database Tanlash
-
-### **Variant 1: Firebase** (Tavsiya etiladi)
-- ✅ Real-time ma'lumotlar
-- ✅ Bepul 5GB makon
-- ✅ Oson authentication
-- ✅ Netlify bilan integratsiya
-
-### **Variant 2: Supabase**
-- ✅ Open-source PostgreSQL
-- ✅ Bepul 500MB
-- ✅ REST API
-- ✅ Real-time
-
-## 📱 Admin Panel Imkoniyatlari
-
-```
-LOGIN → DASHBOARD
-         ├── Koordinatorlarni tahrirla
-         ├── Yangiliklar qosh/o'zgartir
-         ├── Tadbirlar jadvalka qil
-         ├── A'zolar ro'yxati
-         └── Statistika ko'rish
-```
-
-## 📄 Fayllar
-
-- `public/index.html` - Bosh sahifa
-- `admin/index.html` - Admin panel
-- `netlify.toml` - Hosting konfiguratsiyasi
-- `functions/` - Backend API-lar
-
----
-
-**Qo'shimcha savollar?** Issues yoki Discussions orqali yozing! 🚀
+- This is intentionally minimal. For production you should not store secrets in client-side files. Use server-side functions or Netlify Functions to keep credentials secret.
+- Parollarsiz demo holatda admin uchun foydalanish qulay, lekin production uchun Firebase Auth tavsiya qilaman.

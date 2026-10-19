@@ -1,3 +1,7 @@
+/* main.js — enhanced to load data from public/data/site.json when available,
+   support lazy-loading and keep backwards compatible localStorage fallback.
+*/
+
 const defaultData = {
   stats: [
     '8 ta koordinatsiya yoʻnalishi',
@@ -79,13 +83,40 @@ const defaultData = {
   }
 };
 
-function getSiteData() {
+let SITE_DATA = null;
+
+function saveSiteDataLocally(data) {
   try {
-    const saved = localStorage.getItem('kengashSiteData');
-    return saved ? JSON.parse(saved) : defaultData;
-  } catch (error) {
-    return defaultData;
+    localStorage.setItem('kengashSiteData', JSON.stringify(data));
+  } catch (e) {
+    // ignore
   }
+}
+
+async function fetchSiteData() {
+  try {
+    const res = await fetch('/data/site.json', { cache: 'no-store' });
+    if (!res.ok) throw new Error('no file');
+    const json = await res.json();
+    SITE_DATA = json;
+    saveSiteDataLocally(json);
+    return json;
+  } catch (err) {
+    // fallback to localStorage or default
+    const saved = localStorage.getItem('kengashSiteData');
+    if (saved) {
+      try {
+        SITE_DATA = JSON.parse(saved);
+        return SITE_DATA;
+      } catch (e) {}
+    }
+    SITE_DATA = defaultData;
+    return SITE_DATA;
+  }
+}
+
+function getSiteData() {
+  return SITE_DATA || defaultData;
 }
 
 function renderHeroStats() {
@@ -190,7 +221,28 @@ function setupRevealObserver() {
   document.querySelectorAll('.reveal').forEach((element) => observer.observe(element));
 }
 
-function initSite() {
+// lazy-load background images that are marked with data-bg attribute
+function setupLazyBackgrounds() {
+  const elems = document.querySelectorAll('[data-bg]');
+  if (!('IntersectionObserver' in window)) {
+    elems.forEach((el) => el.style.backgroundImage = `url(${el.dataset.bg})`);
+    return;
+  }
+
+  const obs = new IntersectionObserver((entries, o) => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+      const el = entry.target;
+      el.style.backgroundImage = `url(${el.dataset.bg})`;
+      o.unobserve(el);
+    });
+  }, { rootMargin: '200px' });
+
+  elems.forEach(el => obs.observe(el));
+}
+
+async function initSite() {
+  await fetchSiteData();
   renderHeroStats();
   renderLeader();
   renderLeadership();
@@ -198,6 +250,7 @@ function initSite() {
   renderNews();
   renderContact();
   setupRevealObserver();
+  setupLazyBackgrounds();
 
   const yearEl = document.getElementById('year');
   if (yearEl) yearEl.textContent = new Date().getFullYear();
